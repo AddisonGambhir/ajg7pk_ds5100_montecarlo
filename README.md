@@ -1,11 +1,56 @@
 # ajg7pk_ds5100_montecarlo
 
+## **Metadata**
+Project Name: Monte Carlo Dice Game Simulation
+Version: 1.0
+Author: Addison Gambhir
+License: MIT
+Classes:
+Die: Represents a die with specific face values and weights.
+Game: Models a game consisting of rolling multiple dice.
+Analyzer: Analyzes game results and computes various statistics.
+Tests:
+test_die.py: Contains unit tests for the Die class.
+test_game.py: Contains unit tests for the Game class.
+test_analyzer.py: Contains unit tests for the Analyzer class.
+Datasets:
+english_letters.txt: A dataset detailing the frequency of English letters.
+scrabble_words.txt: A dataset containing all of the words permissible in Scrabble.
 
-This module essentially models a 'Monte Carlo' simulation involving dice rolls. The Die class lets you model and manipulate a die with specified faces and weights, the Game class lets you play games with multiple dice, and the Analyzer class offers tools to analyze the results of those games.
 
+## Synopsis
+1. Die Class:
+from montecarlo.montecarlo import Die
+# Initializing a die with specific faces
+die = Die(faces=np.array([1, 2, 3, 4, 5, 6]))
+# Getting the die's info
+state = die.get_die_state()
+# Rolling the die 10 times
+rolls = die.roll(num_rolls=10)
+# Setting the weight for a specific face value
+die.set_weight(face=5, weight=2)
 
+# 2. Game Class:
+# Create a game that has a list of dice
+game = Game(dice=[die, die])
+# Play the game by rolling the dice 5 times
+game.play(times=5)
+# Show results of the most recent play in wide form (defaults to 'narrow')
+results = game.show_results(form='wide')
 
-Documentation of class features and methods: 
+3. Analyzer Class:
+# We can analyze the results of a game
+analyzer = Analyzer(game=game)
+# Use the function to get unique combinations of faces rolled and their counts
+combinations = analyzer.combo_count()
+# Obtaining counts of each face for each roll
+face_counts = analyzer.face_counts_per_roll()
+# Counting the number of jackpots (all the same value when rolled)
+jackpots = analyzer.jackpot()
+# Compute unique permutations of faces with their counts included
+permutations = analyzer.permutation_count()
+
+# All Documentation:
 class Die(builtins.object)
  |  Die(faces: numpy.ndarray)
  |  
@@ -160,3 +205,4 @@ class Analyzer(builtins.object)
  |  
  |  __weakref__
  |      list of weak references to the object (if defined)
+
