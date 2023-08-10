@@ -1,6 +1,6 @@
 # ajg7pk_ds5100_montecarlo
 
-## **Metadata**
+# **Metadata**
 Project Name: Monte Carlo Dice Game Simulation
 Version: 1.0
 Author: Addison Gambhir
@@ -18,36 +18,36 @@ english_letters.txt: A dataset detailing the frequency of English letters.
 scrabble_words.txt: A dataset containing all of the words permissible in Scrabble.
 
 
-## Synopsis
+# Synopsis
 1. Die Class:
 from montecarlo.montecarlo import Die
-# Initializing a die with specific faces
+## Initializing a die with specific faces
 die = Die(faces=np.array([1, 2, 3, 4, 5, 6]))
-# Getting the die's info
+## Getting the die's info
 state = die.get_die_state()
-# Rolling the die 10 times
+## Rolling the die 10 times
 rolls = die.roll(num_rolls=10)
-# Setting the weight for a specific face value
+## Setting the weight for a specific face value
 die.set_weight(face=5, weight=2)
 
 # 2. Game Class:
-# Create a game that has a list of dice
+## Create a game that has a list of dice
 game = Game(dice=[die, die])
-# Play the game by rolling the dice 5 times
+## Play the game by rolling the dice 5 times
 game.play(times=5)
-# Show results of the most recent play in wide form (defaults to 'narrow')
+## Show results of the most recent play in wide form (defaults to 'narrow')
 results = game.show_results(form='wide')
 
-3. Analyzer Class:
-# We can analyze the results of a game
+# 3. Analyzer Class:
+## We can analyze the results of a game
 analyzer = Analyzer(game=game)
-# Use the function to get unique combinations of faces rolled and their counts
+## Use the function to get unique combinations of faces rolled and their counts
 combinations = analyzer.combo_count()
-# Obtaining counts of each face for each roll
+## Obtaining counts of each face for each roll
 face_counts = analyzer.face_counts_per_roll()
-# Counting the number of jackpots (all the same value when rolled)
+## Counting the number of jackpots (all the same value when rolled)
 jackpots = analyzer.jackpot()
-# Compute unique permutations of faces with their counts included
+## Compute unique permutations of faces with their counts included
 permutations = analyzer.permutation_count()
 
 # All Documentation:
