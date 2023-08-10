@@ -61,6 +61,54 @@ jackpots = analyzer.jackpot()
 ## Compute unique permutations of faces with their counts included
 permutations = analyzer.permutation_count()
 
+
+
+# API Documentation
+
+## `Die` Class
+
+- **`__init__(self, faces)`**  
+  Initializes the die object with specific face values.
+
+- **`get_die_state()`**  
+  Returns a copy of the die's data frame.
+
+- **`roll(num_rolls)`**  
+  Simulates rolling the die multiple times.
+
+- **`set_weight(face, weight)`**  
+  Sets the weight for a specific face value.
+
+## `Game` Class
+
+- **`__init__(self, dice)`**  
+  Initializes the Game with a list of dice (Die objects).
+
+- **`play(times)`**  
+  Simulates playing the game by rolling the dice a specified number of times.
+
+- **`show_results(form)`**  
+  Displays the results of the most recent play in the specified format ('wide' or 'narrow').
+
+## `Analyzer` Class
+
+- **`__init__(self, game)`**  
+  Initializes the Analyzer with a Game object.
+
+- **`combo_count()`**  
+  Determines unique combinations of faces rolled and their counts.
+
+- **`face_counts_per_roll()`**  
+  Counts occurrences of each face value in every roll.
+
+- **`jackpot()`**  
+  Computes the number of jackpot occurrences in the game.
+
+- **`permutation_count()`**  
+  Computes unique permutations of faces rolled and their counts.
+
+
+
 # All Documentation:
 class Die(builtins.object)
  |  Die(faces: numpy.ndarray)
