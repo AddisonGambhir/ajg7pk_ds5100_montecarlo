@@ -1,19 +1,19 @@
 # ajg7pk_ds5100_montecarlo
 
 # **Metadata**
-Project Name: Monte Carlo Dice Game Simulation
-Version: 1.0
-Author: Addison Gambhir
-License: MIT
-Classes:
+Project Name: Monte Carlo Dice Game Simulation 
+Version: 1.0 
+Author: Addison Gambhir 
+License: MIT 
+## Classes: 
 Die: Represents a die with specific face values and weights.
 Game: Models a game consisting of rolling multiple dice.
 Analyzer: Analyzes game results and computes various statistics.
-Tests:
+## Tests:
 test_die.py: Contains unit tests for the Die class.
 test_game.py: Contains unit tests for the Game class.
 test_analyzer.py: Contains unit tests for the Analyzer class.
-Datasets:
+## Datasets:
 english_letters.txt: A dataset detailing the frequency of English letters.
 scrabble_words.txt: A dataset containing all of the words permissible in Scrabble.
 
